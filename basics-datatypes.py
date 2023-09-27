@@ -118,6 +118,56 @@ print(escapeCharacterString) # we can now use the quotes within quotes outputs H
 """There is multiple methods that can come off a string
     did some such as split, replace, upper, lower but there are loads more so use the ide etc. to make sure you know what most do
 """
+print("------------------------------------------------------")
+#Booleans
+
+#This is a boolean
+print(10>9) #will output true
+
+#boolean ran in an if statement
+booleanA = 105
+booleanB = 2
+
+if booleanB > booleanA:
+    print("boolean b is greater than boolean a")
+else:
+    print("boolean a is greater than boolean b") # this one is printed out with the current values
     
 
- 
+#boolean function allows you to evaluate a value
+#evaluate a string
+print(bool("Harvin")) 
+#evaluate a number
+print(bool(11)) # both return true
+
+#can also do it with variables
+print(bool (booleanA))
+
+"""Almost all values by themselves return true
+    any string except empty
+    any num except 0
+    any list,tuple,set and dict except empty ones
+    
+"""
+
+#functions can return booleans
+def booleanFunc():
+    return True
+
+print(booleanFunc())
+
+#can execute code based on boolean answer within a function
+if booleanFunc():
+    print("YES!")
+else:
+    print("NO!") # executes Yes if the return is true like now, if it returns false it would print no
+    
+#python allows you to use booleans to return true or false on whether a variable is a certain data type
+checkDataTypeBool = 200
+print(isinstance(checkDataTypeBool, int)) # retruns true because checkData variable is an int datatype
+
+"""Python has many operators - they have similar functions as other languages I already learnt them in
+    One cool thing is the operators do have an order of operation similar to BIDMAS which determines the order in which certain
+    opertations are carried out.
+    Look at w3schools operator page for full list if you forget anything. 
+"""
