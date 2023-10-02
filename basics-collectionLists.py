@@ -135,6 +135,65 @@ print(useListCreatedByRangeToCreateListAllWithMyName) # it prints out a list wit
 changeHarvinToBob = [x if x != "Harvin" else "Bob" for x in useListCreatedByRangeToCreateListAllWithMyName] #looks through loop to see if anything equals harvin change to bob
 print(changeHarvinToBob) # the list created before with my name 10 times has been changed to bob 10 times
 
+print("-------------------------------------------")
+print("Sort Lists")
+sortListWords = ["Steel", "Metal", "Titanium", "Wood"]
+sortListWords.sort()
+print(sortListWords) # sorts the list in aplhanumerical ascending order same if we did it with number list - lowest number first highest last
+
+sortListWords.sort(reverse=True) # does the sort in reverse 
+print(sortListWords) # now outputs Wood first and metal last 
 
 
+#using functions to create a unique sort 
+def sortByClosestToTen(x):
+    return abs(x - 10) # abs returns absolute value of an arguement
+    
+sortListNumbers = [23, 10, 54, 100, 45, 32]
+sortListNumbers.sort(key = sortByClosestToTen) # key allows us to call upon our function
+print(sortListNumbers) # sorts by choosing the closest to the number 10 which of course in this list is 10 and then going 23,32,45,54,100 respectively 
+
+#the default sort func if there are some words that are captial letters they will go first then the lowercase ones in alphanumeric order
+#to stop this we can force all to be lower case 
+sortMakeAllLowerCase = ["banana", "Apple", "Pear", "grapes"]    
+sortMakeAllLowerCase.sort(key= str.lower) # using the key to make all strings  lower
+
+print(sortMakeAllLowerCase) # without the str.lower it would output apple first then pear , with the str.lower it now outputs apple first and pear goes to the back due to the alphabet
+
+#can get the order in reverse
+sortListNumbers.reverse()
+print(sortListNumbers) # reverses the sort so highest number came out first so 100 first then 10 last
+
+print("----------------------------------------")
+print("Copying Lists")
+
+#one way to copy is use the copy method
+copyOfNumberList = sortListNumbers.copy()
+#copyOfNumberList = list(sortListNumbers) - another way of copying the list
+print(copyOfNumberList) # outputs the same list of the most recent number list created earlier 
+
+print("-----------------------------------------")
+print("Join lists")
+
+addListOne = [54, 32, 12]   
+addListTwo = ["fd", "gf", "jy"]
+
+twoListsAddedTogether = addListOne + addListTwo
+print(twoListsAddedTogether) #outputs list one the numbers than list 2 the letters all in one list together
+
+#Another way of joining lists
+appendListOne = ["append 1", "append 2", "append 3"]
+appendListTwo  =[21, 32, 54]    
+
+for x in appendListTwo:
+    appendListOne.append(x)
+
+print(appendListOne) # appends the numbers to the end of the letters list similar to previous join
+
+#can also join them through extend
+extendListOne = ["extend1", "extend2", "extend3"]
+extendListTwo = [54,13,65,6]
+
+extendListOne.extend(extendListTwo)
+print(extendListOne) # again adds in extend list two to the end of extend list one.
 
